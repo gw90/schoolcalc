@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Calculator | NYC School Secrets</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' ></script>
+	<script src='../bootstrap/js/bootstrap.js' async></script>
+	<link href='../bootstrap/css/bootstrap.css' rel='stylesheet'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+
+ <div id="head" class="row">
+	<div class="col-md-2">
+		<img style="padding-left:5%;" src="http://www.NYCSchoolSecrets.com//media/AlinaAdams.jpg" height="150px"/>
+	</div>
+	<div class="col-md-10" style="text-align:center;">
+		<h1 style="font-size:5em;">NYC School Secrets</h1>
+		<h1>Parents Helping Parents</h3>
+	</div>
+<style>
+li {
+	padding-left:5px;
+}
+</style>
+</div>
+<div id="nav" style="font-size:2em;">
+<base href="http://www.NYCSchoolSecrets.com/" target="_top">
+<nav onload="console.log('This website was made by Gregory Wickham. Visit my website at gregorywickham.com');" class="navbar navbar-default">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<meta name="robots" content="index, follow">
+	<meta name="identifier-url" content="http://www.webestools.com/" />
+	<meta name="language" content="EN" />
+  <div style="padding-left:5px;padding-right:5px;" class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+      </button>
+      
+      	
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      <li onmouseover="setAttribute('class', 'active');" onmouseout="setAttribute('class', '');"><a href="" target="_top" style="padding-left:5px;">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Books<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="https://www.amazon.com/Getting-Into-Kindergarten-Alina-Adams-ebook/dp/B00WERQCV8/">Getting into NYC Kindergarten</a></li>
+            <li><a href="https://www.amazon.com/Getting-Into-High-School-Alina-Adams-ebook/dp/B01LKCR4DC/">Getting into NYC High School</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a style="padding-left:5px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Media<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="webisodes">Webisodes</a></li>
+            <li><a href="podcast">Podcasts</a></li>
+          </ul>
+        </li> 
+      
+        <li class="dropdown">
+          <a style="padding-left:5px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Workshops<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="http://www.NYCSchoolSecrets.com/publicworkshops">Open to the Public</a></li>
+            <!--  li><a href="http://pgpclassicsoaps.blogspot.com/2016/05/free-getting-into-nyc-kindergarten.html">Private In-home for Groups</a></li -->
+            <li><a href="http://www.NYCSchoolSecrets.com/privateforschools">Private for Schools</a></li>
+
+          </ul>
+        </li>
+
+      	<li onmouseover="setAttribute('class', 'active');" onmouseout="setAttribute('class', '');"><a style="padding-left:5px;" href="consults" target="_top">Consults</a></li>
+
+      	<li class="dropdown">
+          <a style="padding-left:5px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Columns<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="http://www.NYCSchoolSecrets.com/columns">Examiner</a></li>
+            <li><a href="http://newyorkschooltalk.org/author/alina_adams/">NY School Talk</a></li>
+
+          </ul>
+        </li>
+      	
+      	<li onmouseover="setAttribute('class', 'active');" onmouseout="setAttribute('class', '');"><a style="padding-left:5px;" href="about" target="_top">About</a></li>
+      	<li onmouseover="setAttribute('class', 'active');" onmouseout="setAttribute('class', '');"><a style="padding-left:5px;" href="press" target="_top">Press</a></li>
+      	<li onmouseover="setAttribute('class', 'active');" onmouseout="setAttribute('class', '');"><a style="padding-left:5px;" href="calculator" target="_top">Calculator</a></li>
+      	
+    </div>
+  </div>
+</nav>
+</nav>
+</div>
+<div id="body">
+	<center>
+	<div style="width:85%; text-align:left;" class="row well">
+		<div class="col-md-12">
+<script>
+
+/*
+Copyright 2016 Alina Adams Media LLC.
+*/
+function ch(){
+	if(document.getElementById("choice").value=="ps"){
+		ps();
+	}
+	if(document.getElementById("choice").value=="hce"){
+		hce();
+	}
+	if(document.getElementById("choice").value=="prs"){
+		prs();
+	}
+}
+function ps(){
+	document.getElementById("out").innerHTML="";
+	var list = new Array();
+	//var input = document.getElementById(/'input/').value;
+	var day = parseFloat(document.getElementById("day").value);
+	var month = parseFloat(document.getElementById("month").value);
+	var year = parseFloat(document.getElementById("year").value)+5;
+	var bands = new Array();
+
+	
+	//console.log(day+"/"+month+"/"+year);
+	
+	var d=day+"/"+month+"/"+year;
+	var tmonth = month;
+
+
+	// month will equal bands[i].split("/")[1]
+	bands[1]=day+"/"+tmonth+"/"+year;
+	tmonth = tmonth+3;
+	if(tmonth > 12){
+		tmonth=tmonth-12;
+	}
+	bands[2]=day+"/"+tmonth+"/"+year;
+	tmonth = tmonth+3;
+	if(tmonth > 12){
+		tmonth=tmonth-12;
+	}
+	bands[3]=day+"/"+tmonth+"/"+year;
+	tmonth = tmonth+3;
+	if(tmonth > 12){
+		tmonth=tmonth-12;
+	}
+	bands[4]=day+"/"+tmonth+"/"+year;
+	
+	var cnum;
+	var correctband;
+	console.log(bands);
+	if(bands[1].split("/")[1] == 1||bands[2].split("/")[1] == 1||bands[3].split("/")[1] == 1||bands[4].split("/")[1] == 1){
+		if(bands[1].split("/")[1] == 1){ cnum = 1;}
+		if(bands[2].split("/")[1] == 1){ cnum = 2;}
+		if(bands[3].split("/")[1] == 1){ cnum = 3;}
+		if(bands[4].split("/")[1] == 1){ cnum = 4;}
+		day = parseFloat(bands[cnum].split("/")[0]);
+		console.log(day);
+		if(day<5){
+			document.getElementById("out").innerHTML="Take it between 1/23/"+year+" and 1/30/"+year; 
+		}
+		
+		if(day<14 && day>4){
+			day--;
+			document.getElementById("out").innerHTML="Take it between 1/1/"+year+" and 1/"+day+"/"+year;
+		}
+		if(day>13){
+			var startday = day - 14;
+			if(startday==0){
+				startday=1;
+			}
+			day--;
+			document.getElementById("out").innerHTML="Take it between 1/"+startday+"/"+year+" and 1/"+day+"/"+year;
+		}
+	} else {
+		document.getElementById("out").innerHTML="Take it between 1/23/"+year+", and 1/30/"+year;
+	}
+}
+
+function hce(){
+	document.getElementById("out").innerHTML="";
+	var list = new Array();
+	//var input = document.getElementById(/'input/').value;
+	var day = parseFloat(document.getElementById("day").value);
+	var month = parseFloat(document.getElementById("month").value);
+	var year = parseFloat(document.getElementById("year").value)+4;
+	var bands = new Array();
+
+	
+	//console.log(day+"/"+month+"/"+year);
+	
+	var d=day+"/"+month+"/"+year;
+	var tmonth = month;
+
+
+	// month will equal bands[i].split("/")[1]
+	bands[1]=day+"/"+tmonth+"/"+year;
+	tmonth = tmonth+2;
+	if(tmonth > 12){
+		tmonth=tmonth-12;
+	}
+	bands[2]=day+"/"+tmonth+"/"+year;
+	tmonth = tmonth+2;
+	if(tmonth > 12){
+		tmonth=tmonth-12;
+	}
+	bands[3]=day+"/"+tmonth+"/"+year;
+	tmonth = tmonth+2;
+	if(tmonth > 12){
+		tmonth=tmonth-12;
+	}
+	bands[4]=day+"/"+tmonth+"/"+year;
+	tmonth = tmonth+2;
+	if(tmonth > 12){
+		tmonth=tmonth-12;
+	}
+	bands[5]=day+"/"+tmonth+"/"+year;
+	tmonth = tmonth+2;
+	if(tmonth > 12){
+		tmonth=tmonth-12;
+	}
+	bands[6]=day+"/"+tmonth+"/"+year;
+	//document.getElementById("out").innerHTML=bands; 
+	var cnum=38;
+	var cnumt;
+	var correctband;
+		if ((bands[1].split("/")[1] < 13) && (bands[1].split("/")[1] > 8)) {
+		    if (cnum == 38) {
+		        cnum = 1;
+		    } else {
+		        cnumt = 1;
+		    }
+		    //console.log("1");
+		}
+		if ((bands[2].split("/")[1] < 13) && (bands[2].split("/")[1] > 8)) {
+		    if (cnum == 38) {
+		        cnum = 2;
+		    } else {
+		        cnumt = 2;
+		    }
+		    //console.log("2");
+		}
+		if ((bands[3].split("/")[1] < 13) && (bands[3].split("/")[1] > 8)) {
+		    if (cnum == 38) {
+		        cnum = 3;
+		    } else {
+		        cnumt = 3;
+		    }
+		    //console.log("3");
+		}
+		if ((bands[4].split("/")[1] < 13) && (bands[4].split("/")[1] > 8)) {
+		    if (cnum == 38) {
+		        cnum = 4;
+		    } else {
+		        cnumt = 4;
+		    }
+		    //console.log("4");
+		}
+		if ((bands[5].split("/")[1] < 13) && (bands[5].split("/")[1] > 8)) {
+		    if (cnum == 38) {
+		        cnum = 5;
+		    } else {
+		        cnumt = 5;
+		    }
+		    //console.log("5");
+		}
+		if ((bands[6].split("/")[1] < 13) && (bands[6].split("/")[1] > 8)) {
+		    if (cnum == 38) {
+		        cnum = 6;
+		    } else {
+		        cnumt = 6;
+		    }
+		    //console.log("6");
+		}
+		day = bands[cnum];
+		var temp;
+		var temoday;
+		//console.log(parseFloat(day.split("/")[0]));
+		if(parseFloat(day.split("/")[0]) > 14){//for regular days (15-30 sep,oct,nov,dec)
+			fday = parseFloat(day.split("/")[0])-14;
+			fday = day.split("/")[1]+"/"+fday+"/"+day.split("/")[2];
+			
+			temp = parseFloat(day.split("/")[0])-1;
+			day = day.split("/")[1]+"/"+temp+"/"+day.split("/")[2];
+			
+			document.getElementById("out").innerHTML="<li>between "+fday+" and "+day+"</li>";
+		}
+		else if(parseFloat(day.split("/")[0]) < 15 && parseFloat(day.split("/")[0]) > 6 && parseFloat(day.split("/")[1]) == 9){
+		//for days 5-14 in september (5-14 sept)
+			temp = parseFloat(day.split("/")[0])-1;
+			day = day.split("/")[1]+"/"+temp+"/"+day.split("/")[2];
+			document.getElementById("out").innerHTML="<li>between 9/1/"+day.split("/")[2]+", and "+day+"</li>";
+		}
+		else if(parseFloat(day.split("/")[0]) < 15 && parseFloat(day.split("/")[1])>9){
+		//for days that require month overload (1-14 oct,nov,dec)
+			tempday = parseFloat(day.split("/")[0]);
+			tempday = tempday-14;
+			tempday = Math.abs(tempday);
+			tempday = 30-tempday;
+			fday = Math.abs(tempday);
+			tempday = parseFloat(day.split("/")[1])-1;
+			fday = tempday+"/"+fday+"/"+day.split("/")[2];
+			temp = parseFloat(day.split("/")[0])-1;
+			day = day.split("/")[1]+"/"+temp+"/"+day.split("/")[2];
+			
+			if(parseFloat(day.split("/")[1]) == 0){
+				temp = parseFloat(day.split("/")[0])-1;
+				day=temp+"/30"+"/"+day.split("/")[2];
+			} 
+			if(parseFloat(day.split("/")[1]) == -1){
+				temp = parseFloat(day.split("/")[0])-1;
+				day=temp+"/29"+"/"+day.split("/")[2];
+			} 
+			if(day.split("/")[0]=="-1") {
+				temp = day.split("/")[2]-1;
+				day="12/"+day.split("/")[1]+"/"+temp;
+			}
+
+			document.getElementById("out").innerHTML="<li>between "+fday+", and "+day+"</li>";
+			
+			
+		} else{}
+		
+		//console.log("complete")
+		
+		day = bands[cnumt];
+		temp = parseFloat(day.split("/")[0])-1;
+		day = temp+"/"+day.split("/")[1]+"/"+day.split("/")[2];
+		//console.log(day);
+		if(parseFloat(day.split("/")[0]) > 14){//for regular days (15-30 sep,oct,nov,dec)
+			//if(parseFloat(day.split("/")[0]) == 9){
+			fday = parseFloat(day.split("/")[0])-14;
+			fday = day.split("/")[1]+"/"+fday+"/"+day.split("/")[2];
+			temp = parseFloat(day.split("/")[0])-1;
+			day = day.split("/")[1]+"/"+temp+"/"+day.split("/")[2];
+			document.getElementById("out").innerHTML=document.getElementById("out").innerHTML+"<li>between "+fday+" and "+day+"</li>";
+		}
+		else if(parseFloat(day.split("/")[0]) < 15 && parseFloat(day.split("/")[1])>9){
+		//for days that require month overload (1-14 oct,nov,dec)
+			tempday = parseFloat(day.split("/")[0]);
+			tempday = tempday -14;
+			tempday = Math.abs(tempday);
+			tempday = 30-tempday;
+			fday = Math.abs(tempday);
+			tempday = parseFloat(day.split("/")[1])-1;
+			fday = tempday+"/"+fday+"/"+day.split("/")[2];
+			temp = parseFloat(day.split("/")[0])-1;
+			day = day.split("/")[1]+"/"+temp+"/"+day.split("/")[2];
+			if(parseFloat(day.split("/")[1]) == 0){
+				temp = parseFloat(day.split("/")[0])-1;
+				day=temp+"/30"+"/"+day.split("/")[2];
+			} 
+			if(parseFloat(day.split("/")[1]) == -1){
+				temp = parseFloat(day.split("/")[0])-1;
+				day=temp+"/29"+"/"+day.split("/")[2];
+			} 
+			if(day.split("/")[0]=="-1") {
+				temp = day.split("/")[2]-1;
+				day="12/"+day.split("/")[1]+"/"+temp;
+			}
+			temp=document.getElementById("out").innerHTML.split("/")[0];
+			temp=temp.slice(-2);
+			temp=parseFloat(temp);
+			if(temp>day.split("/")[0]){
+		document.getElementById("out").innerHTML="<li>between "+fday+", and "+day+"</li>" + document.getElementById("out").innerHTML;
+			} else {
+		document.getElementById("out").innerHTML=document.getElementById("out").innerHTML+"<li>between "+fday+", and "+day+"</li>";
+			}
+			
+		document.getElementById("out").innerHTML=document.getElementById("out").innerHTML.replace("</li><li>", "</li><p>OR</p><li>"); 
+		
+	}
+}
+
+function prs(){
+	var temp;
+	var temp2;
+	var fday;
+	var bday = {};
+
+	bday.day = parseFloat(document.getElementById("day").value);
+	bday.month = parseFloat(document.getElementById("month").value);
+	
+	bday.year = parseFloat(document.getElementById("year").value)+4;
+	
+	/* 
+	Take month.
+	add 6.
+	adjust for overflow.
+	get fday by subtracting 14 days.
+	adjust for overflow
+	subtract one from lastday
+	give range
+	
+	*/
+
+	var bday2=bday;
+	bday2.month=bday2.month+5;
+	if(bday2.month>12){
+		temp=bday2.month-12;
+		bday2.month=temp;
+		bday2.year++;
+	}
+	fday=JSON.stringify(bday2);
+	fday=JSON.parse(fday);
+	temp=bday2.day;
+	fday.day = temp-14;
+	if(fday.day<1){
+		temp=fday.day;
+		temp=fday.day+30;
+		fday.day=temp;
+		fday.month--;
+	}
+	bday2.day--;
+	if(bday2.day==0){
+		bday2.day=30;
+		bday2.month--;
+	}
+	bday2.c = bday2.month+"/"+bday2.day+"/"+bday2.year;
+	fday.c = fday.month+"/"+fday.day+"/"+fday.year;
+	document.getElementById("out").innerHTML="<li>Take it between "+fday.c+" and "+bday2.c+".</li>";
+	
+	var bday3=bday2;
+	bday3.month=bday3.month+5;
+	if(bday3.month>12){
+		temp=bday3.month-12;
+		bday3.month=temp;
+		bday3.year++;
+	}
+	fday=JSON.stringify(bday3);
+	fday=JSON.parse(fday);
+	temp=bday3.day;
+	fday.day = temp-14;
+	if(fday.day<1){
+		temp=fday.day;
+		temp=fday.day+30;
+		fday.day=temp;
+		fday.month--;
+	}
+	bday3.day--;
+	if(bday3.day==0){
+		bday3.day=30;
+		bday3.month--;
+	}
+	bday3.c = bday3.month+"/"+bday3.day+"/"+bday3.year;
+	fday.c = fday.month+"/"+fday.day+"/"+fday.year;
+	document.getElementById("out").innerHTML=document.getElementById("out").innerHTML+"<li>Take it between "+fday.c+" and "+bday3.c+".</li>";
+	document.getElementById("out").innerHTML=document.getElementById("out").innerHTML.replace("</li><li>", "</li><p></p><p>OR</p><li>"); 
+}
+	
+//september, october, november, december 9-12
+</script>
+<label>Child's Birthday: </label>
+<select id="month">
+  <option value="1">January</option>
+  <option value="2">February</option>
+  <option value="3">March</option>
+  <option value="4">April</option>
+  <option value="5">May</option>
+  <option value="6">June</option>
+  <option value="7">July</option>
+  <option value="8">August</option>
+  <option value="9">September</option>
+  <option value="10">October</option>
+  <option value="11">November</option>
+  <option value="12">December</option>
+</select>
+<select id="day">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+</select>
+
+<select id="year">
+  <option value="2012">2012</option>
+  <option value="2013">2013</option>
+  <option value="2014">2014</option>
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
+  <option value="2017">2017</option>
+  <option value="2018">2018</option>
+  <option value="2018">2019</option>
+  <option value="2019">2020</option>
+</select>
+<label>Testing for:</label>
+<select id="choice">
+	<option value="ps">Public School G&T test</option>
+	<option value="hce">Hunter College Elementary</option>
+	<option value="prs">Private Schools</option>
+</select>
+<button onclick="ch();">Submit</button>
+<p><ul id="out"></ul></p>
+<p>Have further questions? Schedule a private consult by emailing: <a href="mailto:AlinaAdams@gmail.com">AlinaAdams@gmail.com</a></p>
+		</div>
+		
+	</div>
+	</center>
+</div>
+
+</body>
+</html>
